@@ -7,7 +7,11 @@
     <link rel="stylesheet" type="text/css" href="reset.css">
     <link rel="stylesheet" type="text/css" href="main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script type="text/javascript" src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBd8Ye4J4fuAcSAIU5tkzlOSiU9WujlnL8&callback=initMap'
+      async defer>
+    </script>
     <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="map.js"></script>
   </head>
   <body>
     <main>
@@ -24,11 +28,12 @@
         <div class="">
           <h3>This site is designed to help your inner adventurer find meteor landings. Fill out the form below and receive local meteor landings, so you can go check them out!</h3>
           <form class="" action="index.html" method="post">
-            <label for="address">Address:<input id="address" type="text" name="address" value="715 s main st">(optional)</label>
-            <label for="city">City:<input id="city" type="text" name="city" value="breckenridge"></label>
-            <label for="state">State:<input id="state" type="text" name="state" value="co"></label>
-            <label for="country">Country:<input id="country" type="text" name="country" value="usa"></label>
+            <label for="address">Address:<input id="address" type="text" name="address" value="">(optional)</label>
+            <label for="city">City:<input id="city" type="text" name="city" value=""></label>
+            <label for="state">State:<input id="state" type="text" name="state" value=""></label>
+            <label for="country">Country:<input id="country" type="text" name="country" value=""></label>
             <input id="submit" type="button" name="submit" value="submit">
+            <input type="button" name="reset_form" value="Reset Form" onclick="this.form.reset();">
           </form>
           <div class="results">
             <h3>Your results!</h3>
@@ -36,7 +41,7 @@
           <div id='map'>
           </div>
         </div>
-        <button type="button" name="new search">new search</button>
+
       </section>
     </main>
     <footer>

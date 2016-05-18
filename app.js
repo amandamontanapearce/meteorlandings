@@ -1,3 +1,4 @@
+  var geoJSON;
 $(document).ready(function(){
   var intialCoordinates;
   var metoerLandings;
@@ -6,8 +7,7 @@ $(document).ready(function(){
   var localMeteorLandingsCoordinates;
   var localMeteorLandingsCoordinatesLat;
   var localMeteorLandingsCoordinatesLng;
-  var map;
-  var geoJSON;
+
   var featureArrayForGeo;
   var coordinateArray;
   $('#submit').click('#submit', function(event){
@@ -62,6 +62,7 @@ $(document).ready(function(){
 
             geoJSON.features.push(
             {
+              'type':'Feature',
               'geometry': {
                 'type': 'Point',
                 'coordinates':localMeteorLandingsCoordinates,
@@ -69,12 +70,12 @@ $(document).ready(function(){
               'properties': {
                 'name': localMeteorLandingsName,
               },
-            }); // feature addElem closing bracet
+            }) // features.push closing bracet
           } //forloop closing bracet
           console.log(geoJSON);
-          } //nasa ajax request closing bracet
+          map.data.addGeoJson(geoJSON);
+        } //nasa  success ajax request closing bracet
       }) //nasa ajax request closing bracet
-
-    }); //done closing bracet
+    }) //done closing bracet
   }) //submit click closing bracet
 }) //ready closing bracet
