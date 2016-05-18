@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
     <title>Meteor Landings</title>
     <link rel="stylesheet" type="text/css" href="reset.css">
@@ -23,14 +24,16 @@
         <div class="">
           <h3>This site is designed to help your inner adventurer find meteor landings. Fill out the form below and receive local meteor landings, so you can go check them out!</h3>
           <form class="" action="index.html" method="post">
-            <label for="address">Address:<input id="address" type="text" name="address" value="">(optional)</label>
-            <label for="city">City:<input id="city" type="text" name="city" value=""></label>
-            <label for="state">State:<input id="state" type="text" name="state" value=""></label>
-            <label for="country">Country:<input id="country" type="text" name="country" value=""></label>
+            <label for="address">Address:<input id="address" type="text" name="address" value="715 s main st">(optional)</label>
+            <label for="city">City:<input id="city" type="text" name="city" value="breckenridge"></label>
+            <label for="state">State:<input id="state" type="text" name="state" value="co"></label>
+            <label for="country">Country:<input id="country" type="text" name="country" value="usa"></label>
             <input id="submit" type="button" name="submit" value="submit">
           </form>
           <div class="results">
             <h3>Your results!</h3>
+          </div>
+          <div id='map'>
           </div>
         </div>
         <button type="button" name="new search">new search</button>

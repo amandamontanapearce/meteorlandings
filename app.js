@@ -2,9 +2,14 @@ $(document).ready(function(){
   var intialCoordinates;
   var metoerLandings;
   var localMeteorLandings;
+  var localMeteorLandingsName;
   var localMeteorLandingsCoordinates;
   var localMeteorLandingsCoordinatesLat;
   var localMeteorLandingsCoordinatesLng;
+  var map;
+  var geoJSON;
+  var featureArrayForGeo;
+  var coordinateArray;
   $('#submit').click('#submit', function(event){
     event.preventDefault();
 
@@ -25,7 +30,7 @@ $(document).ready(function(){
         }
       }
     }).done( function(){
-      console.log(intialCoordinates);
+      //console.log(intialCoordinates);
       var coordinatesLatUpper = intialCoordinates.lat + 2;
       var coordinatesLatLower = intialCoordinates.lat -2;
       var coordinatesLngUpper = intialCoordinates.lng + 2;
@@ -43,33 +48,33 @@ $(document).ready(function(){
         success: function(data){
           meteorLandings= data;
           console.log(meteorLandings);
+          geoJSON = {
+            'type': 'FeatureCollection',
+            'features':[]};
           for (var i = 0; i < meteorLandings.length; i++) {
-            localMeteorLandings = meteorLandings[i].name + ' coordinates are ' + meteorLandings[i].geolocation.coordinates + ' ';
-            console.log(localMeteorLandings);
             localMeteorLandingsCoordinates = meteorLandings[i].geolocation.coordinates;
+            localMeteorLandingsName = meteorLandings[i].name;
             localMeteorLandingsCoordinatesLat = meteorLandings[i].geolocation.coordinates[0];
             localMeteorLandingsCoordinatesLng = meteorLandings[i].geolocation.coordinates[1];
+            localMeteorLandings = localMeteorLandingsName + ' coordinates are ' + localMeteorLandingsCoordinates + ' ';
+            //console.log(localMeteorLandings);
             $('.results').append(localMeteorLandings);
-            // $.ajax({
-            //   type: 'GET',
-            //   url: https:'//maps.googleapis.com/maps/api/geocode/json?latlng=' + localMeteorLandingsCoordinates + '&key=AIzaSyBd8Ye4J4fuAcSAIU5tkzlOSiU9WujlnL8',
-            //   success: function(data){
-            //
-            //   }
-            // })
-          }
-        }
-      })
 
+            geoJSON.features.push(
+            {
+              'geometry': {
+                'type': 'Point',
+                'coordinates':localMeteorLandingsCoordinates,
+              },
+              'properties': {
+                'name': localMeteorLandingsName,
+              },
+            }); // feature addElem closing bracet
+          } //forloop closing bracet
+          console.log(geoJSON);
+          } //nasa ajax request closing bracet
+      }) //nasa ajax request closing bracet
 
-
-
-
-
-
-
-
-
-    });
-  })
-})
+    }); //done closing bracet
+  }) //submit click closing bracet
+}) //ready closing bracet
