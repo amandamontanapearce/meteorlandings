@@ -1,0 +1,57 @@
+html{ box-sizing: border-box;}
+
+img{max-width: 100%; height: auto;}
+
+body{
+  border: solid $nuetral 50px;
+  background: {
+    color:$main;
+    image: url('img/meteorBomb.jpg');
+    repeat: none;
+  };
+}
+
+header{
+  margin: 5% 2.5%;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav{
+  float: right;
+  ul{
+    li{
+      margin: 2%;
+      display: inline;
+    };
+  };
+}
+
+section{
+  width: 55%;
+  margin: 0 auto;
+  padding: 4%;
+  background: {
+    color:$opaqueMain;
+  };
+}
+
+form{
+  width: 45%;
+  margin: 5% auto;
+  padding: 2%;
+  border: solid $black 3px;
+  display: flex;
+  justify-content: baseline;
+  align-items: baseline;
+  flex-wrap: wrap;
+  label{
+    margin: 3% 10%;
+  }
+  #reset, #submit{
+    margin: 5%;
+  }
+  background: {
+    color:$opaqueSecondary;
+  }
+}
