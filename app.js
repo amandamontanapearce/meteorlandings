@@ -1,12 +1,13 @@
   var geoJSON;
-$(document).ready(function(){
+  var initialMeteorLandingsCoordinatesLat;
+  var initialMeteorLandingsCoordinatesLng;
   var intialCoordinates;
+$(document).ready(function(){
+
   var metoerLandings;
   var localMeteorLandings;
   var localMeteorLandingsName;
   var localMeteorLandingsCoordinates;
-  var localMeteorLandingsCoordinatesLat;
-  var localMeteorLandingsCoordinatesLng;
 
   var featureArrayForGeo;
   var coordinateArray;
@@ -30,7 +31,9 @@ $(document).ready(function(){
         }
       }
     }).done( function(){
-      //console.log(intialCoordinates);
+      console.log(intialCoordinates);
+      initialMeteorLandingsCoordinatesLat = intialCoordinates.lat;
+      initialMeteorLandingsCoordinatesLng = intialCoordinates.lng;
       var coordinatesLatUpper = intialCoordinates.lat + 2;
       var coordinatesLatLower = intialCoordinates.lat -2;
       var coordinatesLngUpper = intialCoordinates.lng + 2;
@@ -54,13 +57,11 @@ $(document).ready(function(){
           for (var i = 0; i < meteorLandings.length; i++) {
             localMeteorLandingsCoordinates = meteorLandings[i].geolocation.coordinates;
             localMeteorLandingsName = meteorLandings[i].name;
-            localMeteorLandingsCoordinatesLat = meteorLandings[i].geolocation.coordinates[0];
-            localMeteorLandingsCoordinatesLng = meteorLandings[i].geolocation.coordinates[1];
             localMeteorLandings = localMeteorLandingsName + ' coordinates are ' + localMeteorLandingsCoordinates + ' ';
             //console.log(localMeteorLandings);
             $('.results').append(localMeteorLandings);
             $('.results').show();
-            $('#map').show();
+
 
             geoJSON.features.push(
             {
@@ -74,10 +75,15 @@ $(document).ready(function(){
               },
             }) // features.push closing bracet
           } //forloop closing bracet
+          console.log(initialMeteorLandingsCoordinatesLat);
           console.log(geoJSON);
           map.data.addGeoJson(geoJSON);
         } //nasa  success ajax request closing bracet
       }) //nasa ajax request closing bracet
     }) //done closing bracet
   }) //submit click closing bracet
+
+  $('#reset').click( function(){
+    $('.results').hide();
+  })
 }) //ready closing bracet

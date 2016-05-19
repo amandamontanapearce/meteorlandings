@@ -127,8 +127,6 @@ form {
   display: none; }
 
 #map {
-  display: none; }
-
-#map {
-  height: 500px;
-  width: 500px; }
+  margin: 5% auto;
+  height: 300px;
+  width: 300px; }
