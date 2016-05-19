@@ -59,6 +59,8 @@ $(document).ready(function(){
             localMeteorLandings = localMeteorLandingsName + ' coordinates are ' + localMeteorLandingsCoordinates + ' ';
             //console.log(localMeteorLandings);
             $('.results').append(localMeteorLandings);
+            $('.results').show();
+            $('#map').show();
 
             geoJSON.features.push(
             {

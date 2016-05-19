@@ -122,3 +122,13 @@ form {
 #reset {
   color: #1f2042;
   background-color: #d7d3e3; }
+
+.results {
+  display: none; }
+
+#map {
+  display: none; }
+
+#map {
+  height: 500px;
+  width: 500px; }
