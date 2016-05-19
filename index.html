@@ -26,20 +26,20 @@
         <section>
             <div class="region">
                 <h3>This site is designed to help your inner adventurer find meteor landings. Fill out the form below and receive local meteor landings, so you can go check them out!</h3>
-                <form class="" action="" method="post">
+                <form id="addressForm" class="" action="" method="post">
                     <label for="address">Address:
-                        <input id="address" type="text" name="address" value="715 s main st">(optional)</label>
+                        <input id="address" type="text" name="address" value="">(optional)</label>
                     <label for="city">City:
-                        <input id="city" type="text" name="city" value="breckenridge">
+                        <input id="city" type="text" name="city" value="">
                     </label>
                     <label for="state">State:
-                        <input id="state" type="text" name="state" value="co ">
+                        <input id="state" type="text" name="state" value="">
                     </label>
                     <label for="country">Country:
                         <input id="country" type="text" name="country" value="us">
                     </label>
                     <input id="submit" type="button" name="submit" value="submit">
-                    <input id="reset" type="button" name="reset_form" value="Reset Form" onclick="this.form.reset();">
+                    <input id="clear" type="button" name="clear" value="clear">
                 </form>
                 <div id="map">
                 </div>

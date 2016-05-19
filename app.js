@@ -83,7 +83,8 @@ $(document).ready(function(){
     }) //done closing bracet
   }) //submit click closing bracet
 
-  $('#reset').click( function(){
+  $('#clear').click( function(){
+    document.getElementById("addressForm").reset();
     $('.results').hide();
   })
 }) //ready closing bracet
