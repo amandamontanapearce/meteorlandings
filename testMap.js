@@ -16,3 +16,4 @@ var styles = [{"featureType":"landscape","stylers":[{"saturation":-100},{"lightn
                     optimized: false
                 };
       }
+    )};
