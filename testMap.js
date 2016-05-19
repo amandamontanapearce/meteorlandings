@@ -4,7 +4,7 @@ var styles = [{"featureType":"landscape","stylers":[{"saturation":-100},{"lightn
 
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 40, lng: -105},
+          center: {lat:40.30583 , lng: -105.02325},
           zoom: 8
 
         });
@@ -15,4 +15,5 @@ var styles = [{"featureType":"landscape","stylers":[{"saturation":-100},{"lightn
                     title: feature.getProperty('name'),
                     optimized: false
                 };
-      }
+      })
+    }

@@ -1,0 +1,9 @@
+{
+  "firebase": "meteorlandings-q1project",
+  "public": ".",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
