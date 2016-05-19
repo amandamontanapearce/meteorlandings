@@ -75,7 +75,7 @@ $(document).ready(function(){
               },
             }) // features.push closing bracet
           } //forloop closing bracet
-          console.log(initialMeteorLandingsCoordinatesLat);
+          console.log(typeof(initialMeteorLandingsCoordinatesLat));
           console.log(geoJSON);
           map.data.addGeoJson(geoJSON);
         } //nasa  success ajax request closing bracet
