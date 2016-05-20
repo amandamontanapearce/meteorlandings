@@ -9,11 +9,11 @@ var styles = [{"featureType":"landscape","stylers":[{"saturation":-100},{"lightn
 
         });
         map.setOptions({styles: styles});
-        map.data.setStyle(function(feature) {
-                return {
-                    icon: 'http://placekitten.com/50/75',
-                    title: feature.getProperty('name'),
-                    optimized: false
-                };
+        // map.data.setStyle(function(feature) {
+        //         return {
+        //             icon: 'http://placekitten.com/50/75',
+        //             title: feature.getProperty('name'),
+        //             optimized: false
+        //         };
       }
     )};

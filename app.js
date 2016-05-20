@@ -60,7 +60,7 @@ $(document).ready(function(){
             localMeteorLandings = localMeteorLandingsName + ' coordinates are ' + localMeteorLandingsCoordinates + ' ';
             //console.log(localMeteorLandings);
             $('.results').append(localMeteorLandings);
-            $('.results').show();
+            $('#map').height(500);
 
 
             geoJSON.features.push(
@@ -78,6 +78,7 @@ $(document).ready(function(){
           console.log(typeof(initialMeteorLandingsCoordinatesLat));
           console.log(geoJSON);
           map.data.addGeoJson(geoJSON);
+          
         } //nasa  success ajax request closing bracet
       }) //nasa ajax request closing bracet
     }) //done closing bracet
