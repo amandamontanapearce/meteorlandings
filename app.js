@@ -66,7 +66,7 @@ $(document).ready(function(){
             google.maps.event.trigger(map, 'resize');
             $('.results').show();
             google.maps.event.trigger(map, 'resize'); ////
-            $('#map').height(300);////
+            $('#map').show();////
 
             geoJSON.features.push(
             {
