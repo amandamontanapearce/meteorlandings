@@ -128,6 +128,7 @@ form {
 
 #map {
   margin: 5% auto;
-  height: 300px;
-  width: 300px;
-  display: none; }
+
+  height: 3px;
+  width: 300px; }
+>>>>>>> experimentBranch
