@@ -64,9 +64,9 @@ $(document).ready(function(){
             //console.log(localMeteorLandings);
             $('.results').append(localMeteorLandings);
             google.maps.event.trigger(map, 'resize');
+            $('#map').height(300);////
             $('.results').show();
-            google.maps.event.trigger(map, 'resize'); ////
-            $('#map').show();////
+
 
             geoJSON.features.push(
             {
