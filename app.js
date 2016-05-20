@@ -60,6 +60,7 @@ $(document).ready(function(){
             localMeteorLandings = localMeteorLandingsName + ' coordinates are ' + localMeteorLandingsCoordinates + ' ';
             //console.log(localMeteorLandings);
             $('.results').append(localMeteorLandings);
+            google.maps.event.trigger(map, 'resize');
             $('.results').show();
             $('#map').height(300);
 
