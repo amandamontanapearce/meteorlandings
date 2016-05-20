@@ -129,4 +129,5 @@ form {
 #map {
   margin: 5% auto;
   height: 300px;
-  width: 300px; }
+  width: 300px;
+  display: none; }

@@ -7,19 +7,13 @@ var toBeCenter
         toBeCenter = JSON.parse(toBeCenter);
         map = new google.maps.Map(document.getElementById('map'), {
         zoom: 1,
-
         });
         map.setOptions({styles: styles});
-      //   map.data.setStyle(function(feature) {
-      //           return {
-      //               icon: 'http://placekitten.com/50/75',
-      //               title: feature.getProperty('name'),
-      //               optimized: false
-      //           };
-      // })
+        map.data.setStyle(function(feature) {
+                return {
+                    title: feature.getProperty('name'),
+                    optimized: false
+                };
+      })
       console.log(toBeCenter)
-    }
-
-    function updateMap(addressGo) {
-
     }
