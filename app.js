@@ -2,15 +2,15 @@
   var initialMeteorLandingsCoordinatesLat;
   var initialMeteorLandingsCoordinatesLng;
   var intialCoordinates;
-$(document).ready(function(){
-
-  var metoerLandings;
   var localMeteorLandings;
   var localMeteorLandingsName;
   var localMeteorLandingsCoordinates;
-
   var featureArrayForGeo;
   var coordinateArray;
+$(document).ready(function(){
+
+  var metoerLandings;
+
   $('#submit').click('#submit', function(event){
     event.preventDefault();
 
@@ -28,6 +28,9 @@ $(document).ready(function(){
           console.log('hey not an address')
         } else {
         intialCoordinates = data.results[0].geometry.location;
+        initialCoordinates = JSON.stringify(intialCoordinates);
+
+        localStorage.setItem('startCoordinates', initialCoordinates);
         }
       }
     }).done( function(){
@@ -76,8 +79,8 @@ $(document).ready(function(){
             }) // features.push closing bracet
           } //forloop closing bracet
           console.log(typeof(initialMeteorLandingsCoordinatesLat));
-          console.log(geoJSON);
           map.data.addGeoJson(geoJSON);
+          map.setCenter(toBeCenter);
         } //nasa  success ajax request closing bracet
       }) //nasa ajax request closing bracet
     }) //done closing bracet
