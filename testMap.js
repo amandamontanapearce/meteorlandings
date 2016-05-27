@@ -4,18 +4,18 @@
     var toBeCenter
 
           function initMap() {
-            toBeCenter = localStorage.getItem('startCoordinates');
-            toBeCenter = JSON.parse(toBeCenter);
+            // toBeCenter = localStorage.getItem('startCoordinates');
+            // toBeCenter = JSON.parse(toBeCenter);
             map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 2,
+            zoom: 4,
 
             });
             map.setOptions({styles: styles});
-          //   map.data.setStyle(function(feature) {
-          //           return {
-          //               icon: 'http://placekitten.com/50/75',
-          //               title: feature.getProperty('name'),
-          //               optimized: false
-          //           };
-          // })
+            map.data.setStyle(function(feature) {
+                    return {
+                      //  icon: 'http://placekitten.com/50/75',
+                        title: feature.getProperty('name'),
+                        optimized: false
+                    };
+          })
         }

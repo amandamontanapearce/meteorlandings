@@ -64,9 +64,8 @@ $(document).ready(function(){
             //console.log(localMeteorLandings);
             $('.results').append(localMeteorLandings);
             google.maps.event.trigger(map, 'resize');
-            $('#map').height(300);////
+            $('#map').height(300);
             $('.results').show();
-
 
             geoJSON.features.push(
             {
@@ -82,7 +81,10 @@ $(document).ready(function(){
           } //forloop closing bracet
           console.log(typeof(initialMeteorLandingsCoordinatesLat));
           map.data.addGeoJson(geoJSON);
+          toBeCenter = localStorage.getItem('startCoordinates');
+          toBeCenter = JSON.parse(toBeCenter);
           map.setCenter(toBeCenter);
+
         } //nasa  success ajax request closing bracet
       }) //nasa ajax request closing bracet
     }) //done closing bracet
@@ -91,5 +93,9 @@ $(document).ready(function(){
   $('#clear').click( function(){
     document.getElementById("addressForm").reset();
     $('.results').hide();
+    localStorage.clear();
+    map.data.forEach(function (feature) {
+    map.data.remove(feature);
+});
   })
 }) //ready closing bracet
