@@ -22,7 +22,7 @@ $(document).ready(function(){
 
     $.ajax({
       type:'GET',
-      url: 'https://maps.googleapis.com/maps/api/geocode/json?address=' + inputAddress + '&key=AIzaSyBd8Ye4J4fuAcSAIU5tkzlOSiU9WujlnL8',
+      url: 'https://maps.googleapis.com/maps/api/geocode/json?address=' + inputAddress + '&key=AIzaSyBQj2U5k5ZWjxYQBuYcb0DRJY9-mqjxB1U',
       success: function(data){
         if (data.results[0] === undefined){
           console.log('hey not an address')
