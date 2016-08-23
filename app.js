@@ -22,8 +22,9 @@
 
                   $.ajax({
                           type: 'GET',
-                          url: 'https://maps.googleapis.com/maps/api/geocode/json?address=' + inputAddress + '&key=AIzaSyBQj2U5k5ZWjxYQBuYcb0DRJY9-mqjxB1U',
+                          url: 'https://maps.googleapis.com/maps/api/geocode/json?address=' + inputAddress + '&key=AIzaSyBMJhOg9cfoNsLOM9PWKi59dKych9T5Au0',
                           success: function(data) {
+                            console.log(data);
                               if (data.results[0] === undefined) {
                                   console.log('hey not an address')
                               } else {
@@ -96,4 +97,4 @@
                   map.data.remove(feature);
               });
           })
-      }) 
+      })
