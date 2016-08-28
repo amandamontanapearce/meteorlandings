@@ -4,11 +4,15 @@ img{max-width: 100%; height: auto;}
 
 body{
   border: solid $nuetral 50px;
+  @media screen and (max-width: $break-extrasmall){
+    border: solid $nuetral 5px;
+  }
   background: {
     color:$main;
     image: url('img/meteorBomb.jpg');
     repeat: none;
   };
+  height: 100%;
 }
 
 header{
@@ -29,6 +33,9 @@ nav{
 
 section{
   width: 55%;
+  @media screen and (max-width: $break-extrasmall){
+    width: 70%;
+  }
   margin: 0 auto;
   padding: 4%;
   background: {
@@ -38,6 +45,9 @@ section{
 
 form{
   width: 45%;
+  @media screen and (max-width: $break-extrasmall){
+    width: 70%;
+  }
   margin: 5% auto;
   padding: 2%;
   border: solid $black 3px;
